@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>JEE 2027 | 60-Day Mission Control</title>
+<style>
+:root{--bg:#0b1220;--panel:#121d2e;--panel2:#172438;--line:#26364d;--text:#edf4ff;--muted:#9aabc2;--blue:#65a8ff;--cyan:#54d6d0;--green:#55d69a;--amber:#ffc66d;--red:#ff8585;--purple:#b79aff;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#172b49 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#20324b;color:var(--text);padding:9px 13px;border-radius:11px}button:hover{border-color:var(--blue);filter:brightness(1.12)}button.primary{background:linear-gradient(120deg,#2878dc,#3b9da8);border:0}button.danger{color:#ffaaaa}input,select,textarea{width:100%;background:#0d1726;border:1px solid var(--line);color:var(--text);padding:10px;border-radius:10px;min-width:0}textarea{resize:vertical;min-height:70px}label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.wrap{max-width:1400px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,#3988ef,#55d6c5);display:grid;place-items:center;font-weight:900;color:#071525;font-size:18px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:800}.muted{color:var(--muted)}h1{font-size:clamp(25px,4vw,39px);line-height:1.1;margin:2px 0}h2{font-size:19px;margin:0 0 14px}h3{font-size:15px;margin:0 0 9px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.hero{margin:22px 0;display:grid;grid-template-columns:1.5fr 1fr;gap:14px}.panel,.stat{background:linear-gradient(145deg,rgba(23,36,56,.97),rgba(15,26,42,.97));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 12px 30px #0002}.countrow{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.count{background:#0c1727;border:1px solid #2b405d;border-radius:13px;padding:10px 15px;min-width:75px;text-align:center}.count strong{display:block;font-size:28px;line-height:1.2}.count span{font-size:10px;color:var(--muted);letter-spacing:1px}.progress{height:9px;background:#0b1523;border-radius:20px;overflow:hidden}.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:20px;width:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat strong{font-size:25px;display:block}.stat span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin:14px 0}.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-7{grid-column:span 7}.col-6{grid-column:span 6}.col-5{grid-column:span 5}.col-4{grid-column:span 4}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.sectionhead h2{margin:0}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.field{flex:1;min-width:130px}.small{font-size:12px}.tag{display:inline-block;padding:4px 8px;border-radius:99px;background:#20344e;color:#b9d7ff;font-size:11px}.subject{border-left:3px solid var(--blue);padding:10px 12px;background:#0e1929;border-radius:9px;margin:8px 0}.subject.chem{border-color:var(--green)}.subject.math{border-color:var(--purple)}.task{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid #25344a}.task:last-child{border:0}.task input[type=checkbox]{width:17px;height:17px;margin-top:3px;accent-color:var(--green)}.task.done .tasktext{text-decoration:line-through;color:#8192a8}.tasktext{flex:1}.task small{display:block;color:var(--muted)}.timerdisplay{font-size:38px;font-weight:800;letter-spacing:1px;font-variant-numeric:tabular-nums;margin:8px 0}.timercontrols{display:flex;gap:7px;flex-wrap:wrap}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:700px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.8px}td input,td select{min-width:100px;padding:7px}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 12px}.tab{white-space:nowrap}.tab.active{background:#2768b2;border-color:#4e9cf4}.hidden{display:none!important}.phase{padding:13px;border-radius:13px;background:#0d1929;border:1px solid var(--line);margin:8px 0}.phase strong{display:flex;justify-content:space-between;gap:10px}.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.checkitem{padding:9px;background:#0d1929;border:1px solid var(--line);border-radius:10px}.checkitem label{display:flex;gap:8px;align-items:center;margin:0;color:var(--text);font-size:13px}.checkitem input{width:auto}.notice{padding:11px 13px;border-left:3px solid var(--amber);background:#2a2418;border-radius:8px;color:#ffe0ad;font-size:13px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}.empty{color:var(--muted);padding:15px;text-align:center}.pillgreen{color:var(--green)}@media(max-width:900px){.hero{grid-template-columns:1fr}.col-8,.col-7,.col-6,.col-5,.col-4{grid-column:span 12}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{padding:12px}.panel{padding:14px}.count{min-width:62px}.count strong{font-size:23px}.checklist{grid-template-columns:1fr}.top-actions button{flex:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">VS</div><div><div class="eyebrow">VIJAY SAHARAN • PERSONAL STUDY COMMAND CENTRE</div><h1>JEE 2027 · 60-Day Mission</h1><div class="muted small">JEE Main Session 1 + CBSE Class 12 Boards recovery dashboard</div></div></div>
+ <div class="top-actions"><button onclick="window.print()">Print dashboard</button><button onclick="exportData()">Export backup</button><button onclick="document.getElementById('importFile').click()">Import backup</button><input id="importFile" type="file" accept="application/json" hidden onchange="importData(event)"></div>
+</header>
+
+<section class="hero">
+ <div class="panel">
+  <div class="eyebrow">YOUR NEXT MILESTONE</div><h2 style="font-size:24px;margin:5px 0">JEE Main 2027 · Session 1</h2>
+  <div class="muted">Countdown to the first scheduled exam date: <b>20 January 2027</b></div>
+  <div class="countrow"><div class="count"><strong id="days">--</strong><span>DAYS</span></div><div class="count"><strong id="hours">--</strong><span>HOURS</span></div><div class="count"><strong id="mins">--</strong><span>MINUTES</span></div><div class="count"><strong id="secs">--</strong><span>SECONDS</span></div></div>
+  <div class="row" style="justify-content:space-between"><span class="small muted">60-day mission completion</span><b id="missionPct">0%</b></div><div class="progress"><i id="missionBar"></i></div>
+  <p class="small muted" style="margin-bottom:0">Session 1 dates shown in this dashboard are planning milestones. Verify the latest NTA information and your individual exam date/admit card.</p>
+ </div>
+ <div class="panel">
+  <div class="eyebrow">MISSION RULES</div><h2>Execute, don't over-plan.</h2>
+  <div class="task"><span>01</span><div class="tasktext">One focused chapter at a time<small>Concepts → examples → PYQs → revision</small></div></div>
+  <div class="task"><span>02</span><div class="tasktext">Questions over passive lectures<small>Every study block should produce practice</small></div></div>
+  <div class="task"><span>03</span><div class="tasktext">Boards remain important<small>NCERT, derivations, written practice, practicals</small></div></div>
+  <div class="task"><span>04</span><div class="tasktext">Protect sleep and consistency<small>Target around 8 hours of sleep</small></div></div>
+ </div>
+</section>
+
+<section class="stats">
+ <div class="stat"><span>Self-study logged</span><strong id="selfTotal">0h 0m</strong><span>Timer + manual entries</span></div>
+ <div class="stat"><span>Live class hours</span><strong id="liveTotal">0h 0m</strong><span>Timer + manual entries</span></div>
+ <div class="stat"><span>Tasks completed</span><strong id="taskTotal">0 / 0</strong><span>Across saved daily tasks</span></div>
+ <div class="stat"><span>Mock tests recorded</span><strong id="mockTotal">0</strong><span>Track score and analysis</span></div>
+</section>
+
+<nav class="tabs" style="margin-top:20px">
+ <button class="tab active" data-tab="today">Today</button><button class="tab" data-tab="planner">Daily planner</button><button class="tab" data-tab="timer">Study tracker</button><button class="tab" data-tab="syllabus">Syllabus tracker</button><button class="tab" data-tab="roadmap">60-day roadmap</button><button class="tab" data-tab="tests">Mocks & analysis</button><button class="tab" data-tab="boards">Boards & practicals</button><button class="tab" data-tab="notes">Notes & settings</button>
+</nav>
+
+<main>
+<section id="tab-today" class="tabpage">
+ <div class="grid">
+  <div class="panel col-7">
+   <div class="sectionhead"><h2>Today's mission</h2><div class="row"><input type="date" id="taskDate" style="width:auto" onchange="renderTasks()"><button class="primary" onclick="addTask()">+ Add task</button></div></div>
+   <div class="row small muted" style="margin-bottom:10px"><span id="todayLabel"></span><span>•</span><span id="todayProgress">0% complete</span></div>
+   <div id="taskList"></div>
+  </div>
+  <div class="panel col-5">
+   <h2>Daily subject targets</h2>
+   <div class="subject"><b>Physics · 90 min</b><div class="small muted">Concepts + numericals + PYQs</div></div>
+   <div class="subject chem"><b>Chemistry · 90 min</b><div class="small muted">NCERT + concepts + reactions/PYQs</div></div>
+   <div class="subject math"><b>Mathematics · 90 min</b><div class="small muted">Solved examples + problem practice</div></div>
+   <div class="subject" style="border-color:var(--amber)"><b>Revision / Boards · 45 min</b><div class="small muted">Formula revision, written answers or practical files</div></div>
+   <div class="notice">This is a flexible target, not a reason to cut sleep. If live classes are heavy, scale the workload and keep the daily streak realistic.</div>
+  </div>
+  <div class="panel col-12">
+   <div class="sectionhead"><h2>Quick-start actions</h2><span class="tag">Keep it simple</span></div>
+   <div class="row"><button class="primary" onclick="quickTask('Physics','Revise one concept and solve 15 questions')">+ Physics task</button><button onclick="quickTask('Chemistry','NCERT reading + 15 PYQs')">+ Chemistry task</button><button onclick="quickTask('Mathematics','Solve 15 graded problems')">+ Maths task</button><button onclick="quickTask('Boards','45-minute NCERT / written practice')">+ Boards task</button><button onclick="quickTask('Practical','Complete one practical-file section')">+ Practical task</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="tab-planner" class="tabpage hidden">
+ <div class="panel">
+  <div class="sectionhead"><div><h2>Editable daily timetable</h2><div class="small muted">Edit any cell. Changes are saved in this browser automatically.</div></div><button class="primary" onclick="addSlot()">+ Add time slot</button></div>
+  <div class="tablewrap"><table><thead><tr><th>Time</th><th>Activity</th><th>Subject / focus</th><th>Planned minutes</th><th></th></tr></thead><tbody id="scheduleBody"></tbody></table></div>
+  <div class="row" style="margin-top:12px"><button onclick="resetSchedule()">Restore suggested timetable</button><span class="small muted">Example assumes a 5-hour live-class day; move class blocks to match your actual schedule.</span></div>
+ </div>
+ <div class="panel" style="margin-top:14px"><h2>Suggested day structure</h2><div class="small muted">Wake 6:30 AM • Self-study blocks • Live classes 4–6 hours (example 9 AM–2 PM) • breaks/meals • practical/Boards work • sleep around 10:30 PM. Prioritise approximately 8 hours of sleep.</div></div>
+</section>
+
+<section id="tab-timer" class="tabpage hidden">
+ <div class="grid">
+  <div class="panel col-6">
+   <h2>Focus timer & session capture</h2>
+   <div class="row"><div class="field"><label>Session type</label><select id="timerType"><option>Self-study</option><option>Live class</option><option>Revision</option><option>Mock test</option><option>Practical / Boards</option></select></div><div class="field"><label>Subject</label><select id="timerSubject"><option>Physics</option><option>Chemistry</option><option>Mathematics</option><option>Boards</option><option>Practical</option><option>Other</option></select></div></div>
+   <label style="margin-top:12px">What are you working on?</label><input id="timerTopic" placeholder="e.g. Current Electricity – Kirchhoff rules">
+   <div class="timerdisplay" id="timerDisplay">00:00:00</div><div class="timercontrols"><button class="primary" id="timerStart" onclick="startTimer()">Start</button><button onclick="pauseTimer()">Pause</button><button onclick="finishTimer()">Save session</button><button onclick="resetTimer()">Reset</button></div>
+   <p class="small muted">Timer continues while this page remains open. Save a session to add it to your study log.</p>
+  </div>
+  <div class="panel col-6">
+   <h2>Log time manually</h2>
+   <div class="row"><div class="field"><label>Date</label><input type="date" id="manualDate"></div><div class="field"><label>Duration (minutes)</label><input type="number" id="manualMinutes" min="1" placeholder="60"></div></div>
+   <div class="row" style="margin-top:9px"><div class="field"><label>Type</label><select id="manualType"><option>Self-study</option><option>Live class</option><option>Revision</option><option>Mock test</option><option>Practical / Boards</option></select></div><div class="field"><label>Subject</label><select id="manualSubject"><option>Physics</option><option>Chemistry</option><option>Mathematics</option><option>Boards</option><option>Practical</option><option>Other</option></select></div></div>
+   <label style="margin-top:9px">Topic / notes</label><input id="manualTopic" placeholder="What did you complete?">
+   <button class="primary" style="margin-top:10px" onclick="addManualLog()">Add study log</button>
+  </div>
+  <div class="panel col-12"><div class="sectionhead"><h2>Recent study log</h2><button onclick="clearLogs()" class="danger">Clear all logs</button></div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Type</th><th>Subject</th><th>Topic</th><th>Duration</th><th></th></tr></thead><tbody id="logBody"></tbody></table></div></div>
+ </div>
+</section>
+
+<section id="tab-syllabus" class="tabpage hidden">
+ <div class="panel">
+  <div class="sectionhead"><div><h2>Chapter completion tracker</h2><div class="small muted">Choose a status for each chapter and add your own chapters. Priorities are suggestions; confirm the official syllabus.</div></div><button class="primary" onclick="addChapter()">+ Add chapter</button></div>
+  <div class="row" style="margin-bottom:12px"><div class="field"><label>Filter subject</label><select id="subjectFilter" onchange="renderChapters()"><option>All</option><option>Physics</option><option>Chemistry</option><option>Mathematics</option></select></div><div class="field"><label>Filter status</label><select id="statusFilter" onchange="renderChapters()"><option>All</option><option>Not started</option><option>Learning</option><option>Practising</option><option>Revising</option><option>Done</option></select></div></div>
+  <div class="row" style="justify-content:space-between"><b id="syllabusCount">0 / 0 chapters done</b><span id="syllabusPercent" class="muted small">0%</span></div><div class="progress" style="margin:8px 0 14px"><i id="syllabusBar"></i></div>
+  <div class="tablewrap"><table><thead><tr><th>Subject</th><th>Chapter</th><th>Priority</th><th>Status</th><th>Target date</th><th></th></tr></thead><tbody id="chapterBody"></tbody></table></div>
+ </div>
+</section>
+
+<section id="tab-roadmap" class="tabpage hidden">
+ <div class="grid">
+  <div class="panel col-12"><h2>60-day recovery roadmap</h2>
+   <div class="phase"><strong><span>Phase 1 · Foundation recovery</span><span class="tag">Days 1–20</span></strong><p class="small muted">Build concepts, NCERT understanding, solved examples and basic question confidence. Start with manageable, prerequisite-light chapters.</p><ul class="small"><li>Check syllabus and establish baseline.</li><li>Study selected chapters in all three subjects.</li><li>Practise basic questions and chapter-wise PYQs.</li><li>Start formula, reaction/concept and mistake notebooks.</li></ul></div>
+   <div class="phase"><strong><span>Phase 2 · Question practice</span><span class="tag">Days 21–40</span></strong><p class="small muted">Turn understanding into accuracy and speed.</p><ul class="small"><li>Increase JEE Main PYQ practice.</li><li>Revise completed chapters and repair weak concepts.</li><li>Take chapter-wise and subject-wise tests.</li><li>Continue CBSE written-answer practice.</li></ul></div>
+   <div class="phase"><strong><span>Phase 3 · Exam readiness</span><span class="tag">Days 41–60</span></strong><p class="small muted">Practise exam execution, question selection and revision.</p><ul class="small"><li>Attempt timed mock tests.</li><li>Analyse every mock and maintain an error log.</li><li>Revise formulas, NCERT and recurring mistakes.</li><li>Avoid starting too many large new chapters.</li></ul></div>
+  </div>
+  <div class="panel col-6"><h2>Suggested initial JEE priorities</h2>
+   <div class="subject"><b>Physics</b><div class="small muted">Modern Physics, Semiconductor Electronics, Current Electricity, Electrostatics</div></div>
+   <div class="subject chem"><b>Chemistry</b><div class="small muted">Chemical Kinetics, Solutions, Coordination Compounds, d- and f-Block, Biomolecules</div></div>
+   <div class="subject math"><b>Mathematics</b><div class="small muted">Matrices, Determinants, Vectors, 3D Geometry, Differential Equations</div></div>
+   <p class="small muted">These are starting priorities, not guaranteed question predictions. Check the current NTA syllabus and your own strengths.</p>
+  </div>
+  <div class="panel col-6"><h2>Seven-day launch checklist</h2><div id="weekChecklist"></div></div>
+ </div>
+</section>
+
+<section id="tab-tests" class="tabpage hidden">
+ <div class="panel">
+  <h2>Mock test & performance tracker</h2>
+  <div class="row"><div class="field"><label>Date</label><input type="date" id="mockDate"></div><div class="field"><label>Test type</label><select id="mockType"><option>Full JEE Main mock</option><option>Physics test</option><option>Chemistry test</option><option>Mathematics test</option><option>Chapter test</option><option>CBSE sample paper</option></select></div><div class="field"><label>Score</label><input type="number" id="mockScore" placeholder="e.g. 85"></div><div class="field"><label>Maximum marks</label><input type="number" id="mockMax" value="300"></div></div>
+  <div class="row" style="margin-top:9px"><div class="field"><label>Correct</label><input type="number" id="mockCorrect" min="0"></div><div class="field"><label>Incorrect</label><input type="number" id="mockWrong" min="0"></div><div class="field"><label>Unattempted</label><input type="number" id="mockSkip" min="0"></div></div>
+  <label style="margin-top:9px">Analysis: mistakes, weak chapters, next actions</label><textarea id="mockAnalysis" placeholder="Why did I lose marks? Concept gap / calculation / time / question selection..."></textarea>
+  <button class="primary" style="margin-top:10px" onclick="addMock()">Save test result</button>
+  <div class="tablewrap" style="margin-top:18px"><table><thead><tr><th>Date</th><th>Test</th><th>Score</th><th>Accuracy notes</th><th>Analysis</th><th></th></tr></thead><tbody id="mockBody"></tbody></table></div>
+ </div>
+ <div class="panel" style="margin-top:14px"><h2>Mock analysis method</h2><ol class="small muted"><li>Re-solve every incorrect and guessed question without looking at the solution.</li><li>Label the reason: concept gap, formula recall, calculation, misread, time management or poor question selection.</li><li>Revise the underlying concept and solve 5–10 similar questions.</li><li>Write one prevention rule in your mistake notebook.</li></ol></div>
+</section>
+
+<section id="tab-boards" class="tabpage hidden">
+ <div class="grid">
+  <div class="panel col-6"><h2>CBSE Boards 90%+ tracker</h2><p class="small muted">Keep Board preparation active alongside JEE.</p>
+   <div id="boardChecklist"></div>
+  </div>
+  <div class="panel col-6"><h2>Practical file tracker</h2><div class="row"><div class="field"><label>Subject</label><select id="pracSubject"><option>Physics</option><option>Chemistry</option><option>Mathematics</option><option>Other</option></select></div><div class="field"><label>Experiment / task</label><input id="pracName" placeholder="Experiment or file section"></div></div><button class="primary" style="margin:9px 0" onclick="addPractical()">+ Add practical task</button><div id="practicalList"></div>
+  </div>
+ </div>
+</section>
+
+<section id="tab-notes" class="tabpage hidden">
+ <div class="grid">
+  <div class="panel col-6"><h2>Daily reflection</h2><label>Date</label><input type="date" id="noteDate"><label style="margin-top:9px">What went well?</label><textarea id="noteWin" placeholder="Small wins count."></textarea><label>What needs improvement?</label><textarea id="noteImprove" placeholder="Be specific, not harsh."></textarea><label>Tomorrow's top priority</label><textarea id="noteTomorrow" placeholder="One important task."></textarea><button class="primary" style="margin-top:9px" onclick="saveNote()">Save reflection</button><div id="noteStatus" class="small muted"></div></div>
+  <div class="panel col-6"><h2>Mission settings</h2><label>Mission start date</label><input type="date" id="startDate"><label style="margin-top:9px">First exam date (countdown)</label><input type="date" id="examDate"><label style="margin-top:9px">Your target daily self-study hours</label><input type="number" id="targetHours" min="1" max="12" step=".5"><button class="primary" style="margin-top:10px" onclick="saveSettings()">Save settings</button><p class="small muted">Default dates: mission starts 21 Nov 2026; countdown milestone 20 Jan 2027. You can edit them if your actual plan or official schedule differs.</p>
+   <div class="notice">Data is stored in this browser on this device using local storage. Export a backup regularly. GitHub Pages does not automatically sync data between devices or users.</div>
+  </div>
+  <div class="panel col-12"><h2>Personal operating principles</h2><div class="checklist"><div class="checkitem">☑ Don't compare your starting point with someone else's progress.</div><div class="checkitem">☑ Don't collect plans instead of executing one.</div><div class="checkitem">☑ Don't watch lectures passively; solve questions.</div><div class="checkitem">☑ Don't sacrifice sleep to chase unrealistic hours.</div><div class="checkitem">☑ Complete one chapter properly before rushing ahead.</div><div class="checkitem">☑ Treat Session 1 as progress, not your only chance.</div></div></div>
+ </div>
+</section>
+</main>
+<div class="footer">Built for Vijay Saharan • JEE Main 2027 + CBSE Class 12 • Your progress belongs to you. Back up your data regularly.</div>
+</div>
+<script>
+const KEY='vs_jee60_mission_v1';
+const defaultSchedule=[
+ ['6:30–7:00 AM','Wake up + freshen up','Routine',30],['7:00–8:30 AM','Concepts + questions','Physics',90],['8:30–9:00 AM','Breakfast','Break',30],['9:00 AM–2:00 PM','Live classes (example)','Live class',300],['2:00–3:00 PM','Lunch + rest','Break',60],['3:00–4:30 PM','NCERT + practice','Chemistry',90],['4:30–5:00 PM','Break','Break',30],['5:00–6:30 PM','Problem practice','Mathematics',90],['6:30–7:30 PM','Personal time / break','Break',60],['7:30–8:15 PM','Revision + PYQs','Revision',45],['8:15–9:00 PM','Dinner','Break',45],['9:00–9:30 PM','Practical / Board work','Boards',30],['9:30–10:30 PM','Wind down','Routine',60],['10:30 PM','Sleep','Sleep',480]
+];
+const seedChapters=[
+['Physics','Modern Physics','High'],['Physics','Semiconductor Electronics','High'],['Physics','Current Electricity','High'],['Physics','Electrostatics','High'],['Physics','Magnetism and Moving Charges','Medium'],['Physics','Electromagnetic Induction','Medium'],['Physics','Alternating Current','Medium'],['Physics','Ray Optics','Medium'],
+['Chemistry','Chemical Kinetics','High'],['Chemistry','Solutions','High'],['Chemistry','Coordination Compounds','High'],['Chemistry','d- and f-Block Elements','High'],['Chemistry','Biomolecules','High'],['Chemistry','Electrochemistry','Medium'],['Chemistry','Amines','Medium'],['Chemistry','Aldehydes, Ketones and Carboxylic Acids','Medium'],
+['Mathematics','Matrices','High'],['Mathematics','Determinants','High'],['Mathematics','Vectors','High'],['Mathematics','3D Geometry','High'],['Mathematics','Differential Equations','High'],['Mathematics','Continuity and Differentiability','Medium'],['Mathematics','Applications of Derivatives','Medium'],['Mathematics','Probability','Medium']
+].map((x,i)=>({id:i+1,subject:x[0],name:x[1],priority:x[2],status:'Not started',date:''}));
+let data=load();
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(data));refreshStats()}
+function init(){
+ data.schedule ||= defaultSchedule.map(x=>({time:x[0],activity:x[1],focus:x[2],minutes:x[3]}));
+ data.chapters ||= seedChapters;data.logs ||= [];data.tasks ||= {};data.mocks ||= [];data.practicals ||= [];data.notes ||= {};data.boardChecks ||= {};
+ data.settings ||= {start:'2026-11-21',exam:'2027-01-20',target:5};
+ document.getElementById('taskDate').value=today();document.getElementById('manualDate').value=today();document.getElementById('mockDate').value=today();document.getElementById('noteDate').value=today();
+ document.getElementById('startDate').value=data.settings.start;document.getElementById('examDate').value=data.settings.exam;document.getElementById('targetHours').value=data.settings.target;
+ document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+ renderAll();tickCountdown();setInterval(tickCountdown,1000);
+}
+function today(){let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function showTab(t){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));document.querySelectorAll('.tabpage').forEach(p=>p.classList.toggle('hidden',p.id!=='tab-'+t))}
+function tickCountdown(){let end=new Date((data.settings?.exam||'2027-01-20')+'T00:00:00');let diff=Math.max(0,end-new Date());let d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);['days','hours','mins','secs'].forEach((id,i)=>document.getElementById(id).textContent=[d,h,m,s][i]);let start=new Date((data.settings?.start||'2026-11-21')+'T00:00:00');let total=Math.max(1,end-start),pct=Math.min(100,Math.max(0,(new Date()-start)/total*100));document.getElementById('missionPct').textContent=Math.round(pct)+'%';document.getElementById('missionBar').style.width=pct+'%'}
+function renderAll(){renderTasks();renderSchedule();renderChapters();renderLogs();renderMocks();renderPracticals();renderBoard();renderWeek();refreshStats()}
+function refreshStats(){let self=data.logs.filter(x=>['Self-study','Revision'].includes(x.type)).reduce((a,x)=>a+x.minutes,0),live=data.logs.filter(x=>x.type==='Live class').reduce((a,x)=>a+x.minutes,0);document.getElementById('selfTotal').textContent=fmt(self);document.getElementById('liveTotal').textContent=fmt(live);let all=Object.values(data.tasks).flat(),done=all.filter(x=>x.done).length;document.getElementById('taskTotal').textContent=`${done} / ${all.length}`;document.getElementById('mockTotal').textContent=data.mocks.length}
+function fmt(n){return `${Math.floor(n/60)}h ${n%60}m`}
+function renderTasks(){let date=document.getElementById('taskDate').value||today();let tasks=data.tasks[date]||[];document.getElementById('todayLabel').textContent=new Date(date+'T12:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'short',year:'numeric'});let done=tasks.filter(x=>x.done).length;document.getElementById('todayProgress').textContent=tasks.length?Math.round(done/tasks.length*100)+'% complete':'No tasks yet';document.getElementById('taskList').innerHTML=tasks.length?tasks.map((t,i)=>`<div class="task ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask('${date}',${i},this.checked)"><div class="tasktext"><b>${esc(t.subject)}</b> · ${esc(t.text)}<small>${esc(t.time||'')}</small></div><button class="danger" onclick="deleteTask('${date}',${i})">×</button></div>`).join(''):'<div class="empty">Add your first task. Keep today's list achievable.</div>';refreshStats()}
+function addTask(){let subject=prompt('Subject / category (Physics, Chemistry, Mathematics, Boards, Practical):','Physics');if(subject===null)return;let text=prompt('Specific task:','Revise one concept and solve 15 questions');if(!text)return;let date=document.getElementById('taskDate').value||today();data.tasks[date]||=[];data.tasks[date].push({subject,text,done:false});persist();renderTasks()}
+function quickTask(s,t){let d=document.getElementById('taskDate').value||today();data.tasks[d]||=[];data.tasks[d].push({subject:s,text:t,done:false});persist();renderTasks()}
+function toggleTask(d,i,v){data.tasks[d][i].done=v;persist();renderTasks()}
+function deleteTask(d,i){data.tasks[d].splice(i,1);persist();renderTasks()}
+function renderSchedule(){document.getElementById('scheduleBody').innerHTML=data.schedule.map((s,i)=>`<tr><td><input value="${esc(s.time)}" onchange="editSlot(${i},'time',this.value)"></td><td><input value="${esc(s.activity)}" onchange="editSlot(${i},'activity',this.value)"></td><td><input value="${esc(s.focus)}" onchange="editSlot(${i},'focus',this.value)"></td><td><input type="number" min="0" value="${s.minutes}" onchange="editSlot(${i},'minutes',this.value)"></td><td><button class="danger" onclick="removeSlot(${i})">Delete</button></td></tr>`).join('')}
+function editSlot(i,k,v){data.schedule[i][k]=k==='minutes'?Number(v):v;persist()}
+function addSlot(){data.schedule.push({time:'New time',activity:'New activity',focus:'Subject',minutes:60});persist();renderSchedule()}
+function removeSlot(i){data.schedule.splice(i,1);persist();renderSchedule()}
+function resetSchedule(){if(confirm('Restore the suggested timetable? Your current timetable edits will be replaced.')){data.schedule=defaultSchedule.map(x=>({time:x[0],activity:x[1],focus:x[2],minutes:x[3]}));persist();renderSchedule()}}
+let timer={seconds:0,interval:null,running:false};
+function drawTimer(){let s=timer.seconds;document.getElementById('timerDisplay').textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(x=>String(x).padStart(2,'0')).join(':')}
+function startTimer(){if(timer.running)return;timer.running=true;timer.interval=setInterval(()=>{timer.seconds++;drawTimer()},1000)}
+function pauseTimer(){timer.running=false;clearInterval(timer.interval)}
+function resetTimer(){pauseTimer();timer.seconds=0;drawTimer()}
+function finishTimer(){pauseTimer();if(timer.seconds<60){alert('Study for at least one minute before saving.');return}data.logs.unshift({date:today(),type:document.getElementById('timerType').value,subject:document.getElementById('timerSubject').value,topic:document.getElementById('timerTopic').value,minutes:Math.max(1,Math.round(timer.seconds/60))});persist();renderLogs();resetTimer()}
+function addManualLog(){let m=Number(document.getElementById('manualMinutes').value);if(!m||m<1){alert('Enter a duration of at least one minute.');return}data.logs.unshift({date:document.getElementById('manualDate').value||today(),type:document.getElementById('manualType').value,subject:document.getElementById('manualSubject').value,topic:document.getElementById('manualTopic').value,minutes:m});persist();renderLogs();document.getElementById('manualMinutes').value='';document.getElementById('manualTopic').value=''}
+function renderLogs(){document.getElementById('logBody').innerHTML=data.logs.length?data.logs.map((x,i)=>`<tr><td>${esc(x.date)}</td><td>${esc(x.type)}</td><td>${esc(x.subject)}</td><td>${esc(x.topic)}</td><td>${x.minutes} min</td><td><button class="danger" onclick="deleteLog(${i})">×</button></td></tr>`).join(''):'<tr><td colspan="6" class="empty">No study sessions logged yet.</td></tr>';refreshStats()}
+function deleteLog(i){data.logs.splice(i,1);persist();renderLogs()}
+function clearLogs(){if(confirm('Delete all study logs?')){data.logs=[];persist();renderLogs()}}
+function renderChapters(){let sf=document.getElementById('subjectFilter').value,st=document.getElementById('statusFilter').value,arr=data.chapters.filter(c=>(sf==='All'||c.subject===sf)&&(st==='All'||c.status===st));let done=data.chapters.filter(c=>c.status==='Done').length,p=data.chapters.length?Math.round(done/data.chapters.length*100):0;document.getElementById('syllabusCount').textContent=`${done} / ${data.chapters.length} chapters done`;document.getElementById('syllabusPercent').textContent=p+'%';document.getElementById('syllabusBar').style.width=p+'%';document.getElementById('chapterBody').innerHTML=arr.map(c=>`<tr><td>${esc(c.subject)}</td><td>${esc(c.name)}</td><td>${esc(c.priority)}</td><td><select onchange="chapterEdit(${c.id},'status',this.value)">${['Not started','Learning','Practising','Revising','Done'].map(s=>`<option ${c.status===s?'selected':''}>${s}</option>`).join('')}</select></td><td><input type="date" value="${esc(c.date)}" onchange="chapterEdit(${c.id},'date',this.value)"></td><td><button class="danger" onclick="deleteChapter(${c.id})">×</button></td></tr>`).join('')}
+function chapterEdit(id,k,v){let c=data.chapters.find(x=>x.id===id);if(c)c[k]=v;persist();renderChapters()}
+function addChapter(){let subject=prompt('Subject: Physics, Chemistry or Mathematics','Physics');if(!subject)return;let name=prompt('Chapter name');if(!name)return;data.chapters.push({id:Date.now(),subject,name,priority:'Medium',status:'Not started',date:''});persist();renderChapters()}
+function deleteChapter(id){data.chapters=data.chapters.filter(c=>c.id!==id);persist();renderChapters()}
+function addMock(){let score=Number(document.getElementById('mockScore').value),max=Number(document.getElementById('mockMax').value);if(!Number.isFinite(score)||!max||score>max){alert('Enter a valid score and maximum marks.');return}data.mocks.unshift({date:document.getElementById('mockDate').value,type:document.getElementById('mockType').value,score,max,correct:document.getElementById('mockCorrect').value,wrong:document.getElementById('mockWrong').value,skip:document.getElementById('mockSkip').value,analysis:document.getElementById('mockAnalysis').value});persist();renderMocks();['mockScore','mockCorrect','mockWrong','mockSkip','mockAnalysis'].forEach(id=>document.getElementById(id).value='')}
+function renderMocks(){document.getElementById('mockBody').innerHTML=data.mocks.length?data.mocks.map((m,i)=>`<tr><td>${esc(m.date)}</td><td>${esc(m.type)}</td><td><b>${m.score}/${m.max}</b> (${Math.round(m.score/m.max*100)}%)</td><td>${esc(m.correct||'—')} correct / ${esc(m.wrong||'—')} wrong / ${esc(m.skip||'—')} skipped</td><td>${esc(m.analysis)}</td><td><button class="danger" onclick="deleteMock(${i})">×</button></td></tr>`).join(''):'<tr><td colspan="6" class="empty">No tests recorded. Start with a diagnostic test.</td></tr>';refreshStats()}
+function deleteMock(i){data.mocks.splice(i,1);persist();renderMocks()}
+const boardItems=['NCERT reading and in-text questions','Physics derivations and numericals','Chemistry NCERT line-by-line revision','Mathematics written-solution practice','CBSE sample-paper practice','English / optional subject revision','Practical files and viva preparation'];
+function renderBoard(){document.getElementById('boardChecklist').innerHTML=boardItems.map((x,i)=>`<div class="task"><input type="checkbox" ${data.boardChecks[i]?'checked':''} onchange="data.boardChecks[${i}]=this.checked;persist()"><div class="tasktext">${x}</div></div>`).join('')}
+function addPractical(){let s=document.getElementById('pracSubject').value,n=document.getElementById('pracName').value.trim();if(!n)return;data.practicals.push({id:Date.now(),subject:s,name:n,done:false});document.getElementById('pracName').value='';persist();renderPracticals()}
+function renderPracticals(){document.getElementById('practicalList').innerHTML=data.practicals.length?data.practicals.map((p,i)=>`<div class="task ${p.done?'done':''}"><input type="checkbox" ${p.done?'checked':''} onchange="data.practicals[${i}].done=this.checked;persist();renderPracticals()"><div class="tasktext"><b>${esc(p.subject)}</b> · ${esc(p.name)}</div><button class="danger" onclick="data.practicals.splice(${i},1);persist();renderPracticals()">×</button></div>`).join(''):'<div class="empty">Add each experiment, record, graph or file section.</div>'}
+function renderWeek(){let items=['Day 1: Check syllabus, gather resources and take a diagnostic test','Day 2: Physics foundation + practice','Day 3: Chemistry foundation + practice','Day 4: Mathematics foundation + practice','Day 5: Continue all three subjects','Day 6: Chapter-wise PYQs and revision','Day 7: Short test, analyse mistakes and plan next week'];document.getElementById('weekChecklist').innerHTML=items.map((x,i)=>`<div class="task"><input type="checkbox" ${data.week?.[i]?'checked':''} onchange="data.week||={};data.week[${i}]=this.checked;persist()"><div class="tasktext">${x}</div></div>`).join('')}
+function saveNote(){let d=document.getElementById('noteDate').value||today();data.notes[d]={win:document.getElementById('noteWin').value,improve:document.getElementById('noteImprove').value,tomorrow:document.getElementById('noteTomorrow').value};persist();document.getElementById('noteStatus').textContent='Reflection saved for '+d}
+function saveSettings(){data.settings={start:document.getElementById('startDate').value,exam:document.getElementById('examDate').value,target:Number(document.getElementById('targetHours').value)||5};persist();tickCountdown();alert('Settings saved.')}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='vijay-jee-60-day-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let incoming=JSON.parse(r.result);if(!confirm('Replace the current dashboard data with this backup?'))return;data=incoming;persist();location.reload()}catch(err){alert('Invalid backup file.')}};r.readAsText(f)}
+init();
+</script>
+</body></html>
